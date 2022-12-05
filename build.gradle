@@ -71,6 +71,12 @@ dependencies {
     testImplementation "org.hibernate.validator:hibernate-validator:6.1.7.Final"
 
     implementation("io.micronaut.kafka:micronaut-kafka:4.5.0")
+    annotationProcessor("io.micronaut:micronaut-inject-groovy:3.6.0")
+//    annotationProcessor("io.micronaut:micronaut-inject-java:3.6.0")
+//    implementation("io.micronaut.spring:micronaut-spring-boot-starter:4.3.1")
+//    annotationProcessor("io.micronaut.spring:micronaut-spring-annotation")
+//    annotationProcessor("io.micronaut.spring:micronaut-spring-boot-annotation")
+//    runtimeOnly("io.micronaut.spring:micronaut-spring-boot")
 }
 
 bootRun {

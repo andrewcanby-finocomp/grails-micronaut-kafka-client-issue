@@ -10,9 +10,15 @@ import io.micronaut.configuration.kafka.annotation.Topic
 @KafkaListener(groupId = "weather-group", offsetReset = OffsetReset.LATEST)
 class WeatherConsumer {
 
+    private final WeatherService weatherService
+
+    WeatherConsumer(WeatherService weatherService) {
+        this.weatherService = weatherService
+    }
+
     @Topic("weather")
     void consumeWeather(@KafkaKey String key, String value) {
         float temp = value.toFloat()
-        log.info("received temp {}/{}", key, temp)
+        weatherService.logTemperature(temp)
     }
 }

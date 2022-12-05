@@ -25,7 +25,7 @@ class ProducerService {
     @Scheduled(fixedDelay = 2000l)
     void serviceMethod() {
         String key = RandomStringUtils.randomAlphabetic(5)
-        String value = random.nextFloat().toString()
+        String value = (random.nextFloat() * 22f).toString()
         log.info("producing {}/{}", key, value)
         weatherProducer.produce(key, value)
     }
