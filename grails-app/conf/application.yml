@@ -124,3 +124,13 @@ environments:
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+kafka:
+    enabled: true
+    bootstrap:
+        servers: localhost:9092
+    consumers:
+        default:
+            key:
+                deserializer: org.apache.kafka.common.serialization.StringDeserializer
+            value:
+                deserializer: org.apache.kafka.common.serialization.StringDeserializer
